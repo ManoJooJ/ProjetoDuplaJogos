@@ -5,17 +5,18 @@ def exibir_menu():
     print("4. Sair do sistema")
 
 def cadastrar(lista):
-    item = input("Digite um jogo para ser cadastrado: ")
-    lista.append(item)
-    print("O Jogo foi cadastrado com sucesso!")
+    nome_jogo = input("Digite um jogo para ser cadastrado: ")
+    nota_jogo = input("Nota para o jogo (ex: 10/10): ")
+    lista.append((nome_jogo, nota_jogo)) 
+    print(f"O Jogo {nome_jogo} foi cadastrado com sucesso com a nota {nota_jogo}!")
 
 def exibir_lista(lista):
     if len(lista) == 0:  
         print("Nenhum jogo cadastrado!")  
     else:
         print("Lista de Jogos:")
-        for item in lista:
-            print(item)
+        for jogo, nota in lista:
+            print(f"Jogo: {jogo} - Nota: {nota}")
 
 def mostrar_quantidade(lista):
     print(f"A quantidade de jogos que foram cadastrados: {len(lista)}")
